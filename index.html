@@ -175,27 +175,29 @@
         margin-bottom: 2rem;
     }
 
-    /* --- 元件：拍立得 --- */
+    /* --- 元件：拍立得 (已調整至更大尺寸) --- */
     .polaroid {
         background: #fff;
-        padding: 12px 12px 50px 12px;
-        transform: rotate(-2deg);
+        padding: 20px 20px 60px 20px; /* 增加內邊距 */
+        transform: rotate(-1deg); /* 減少旋轉角度 */
         transition: 0.4s;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.5);
         color: #222;
         text-align: center;
-        max-width: 400px;
+        /* CHANGE: 從 320px 大幅增加到 600px，以匹配參考圖的大尺寸 */
+        max-width: 600px;
         margin: 0 auto;
+        border: 2px solid var(--neon-pink); /* 增加霓虹邊框 */
     }
     .polaroid:hover {
-        transform: rotate(0deg) scale(1.02);
+        transform: rotate(0deg) scale(1.01); /* 微調hover效果 */
         z-index: 20;
-        box-shadow: 0 0 30px var(--neon-pink);
+        box-shadow: 0 0 40px var(--neon-pink);
     }
     .polaroid img, .img-placeholder {
         width: 100%;
-        /* CHANGE: 強制設定 3:5 比例 (Portrait) */
-        aspect-ratio: 3 / 5; 
+        /* CHANGE: 調整為 4:5 (Portrait)，視覺更平衡舒適 */
+        aspect-ratio: 4 / 5; 
         display: block;
         filter: sepia(0.2) contrast(1.1);
         background: #eee;
@@ -207,10 +209,10 @@
     .img-placeholder {
         display: flex; align-items: center; justify-content: center;
         background: linear-gradient(45deg, #222, #444);
-        color: #fff; font-family: 'Audiowide';
+        color: #fff; font-family: 'Audiowide'; font-size: 2rem; /* 增大字體 */
     }
     .polaroid-caption {
-        font-family: 'VT323'; font-size: 1.5rem; margin-top: 15px; font-weight: bold;
+        font-family: 'VT323'; font-size: 2rem; margin-top: 20px; font-weight: bold; /* 增大字體 */
     }
 
     /* --- 元件：霓虹表格 (Data Table) --- */
@@ -244,13 +246,16 @@
 
     /* --- Hero Section --- */
     .hero {
-        display: flex; align-items: center; justify-content: space-between; min-height: 60vh;
+        display: flex; align-items: center; justify-content: space-between; min-height: 70vh; /* 增加最小高度 */
     }
     .hero-img {
-        max-width: 450px;
+        max-width: 700px; /* 增加最大寬度 */
         width: 100%; /* 確保容器響應 */
         animation: float 4s ease-in-out infinite;
-        filter: drop-shadow(0 0 20px rgba(5, 217, 232, 0.4));
+        filter: drop-shadow(0 0 30px rgba(5, 217, 232, 0.4));
+        /* 讓內部拍立得置中 */
+        display: flex;
+        justify-content: center; 
     }
     @keyframes float {
         0%, 100% { transform: translateY(0); }
@@ -342,7 +347,7 @@
                     </div>
                 </div>
                 <div class="hero-img">
-                    <div class="polaroid" style="transform: rotate(3deg); padding-bottom: 40px;">
+                    <div class="polaroid" style="transform: rotate(2deg); padding-bottom: 50px;">
                         <div class="img-placeholder" style="background: url('character_color.png.JPG'), linear-gradient(135deg, #111, #333);">Mr. Chill Figure</div>
                         <div class="polaroid-caption">Mr. Chill</div>
                     </div>
@@ -352,7 +357,7 @@
 
         <div id="about" class="section">
             <div class="grid-2">
-                <div class="polaroid" style="transform: rotate(-2deg);">
+                <div class="polaroid" style="transform: rotate(-1deg);">
                      <div class="img-placeholder" style="background: url('IMG_0668.JPG'), #222;">Concept Art</div>
                     <div class="polaroid-caption">Concept Draft v0.1</div>
                 </div>
@@ -437,7 +442,7 @@
                     </div>
                 </div>
 
-                <div class="polaroid" style="transform: rotate(2deg);">
+                <div class="polaroid" style="transform: rotate(1deg);">
                      <div class="img-placeholder" style="background: url('logo_sketch.png.PNG'), #333;">Logo Sketch</div>
                     <div class="polaroid-caption">Hand-drawn Vibes</div>
                 </div>
@@ -544,7 +549,7 @@
                         <p style="margin-top:20px; color:var(--neon-pink); font-size:1.5rem; text-align:center; font-family:'Press Start 2P'; animation: blink 1s infinite;">$ COMING SOON</p>
                     </div>
                 </div>
-                <div class="polaroid" style="transform: rotate(3deg);">
+                <div class="polaroid" style="transform: rotate(2deg);">
                      <div class="img-placeholder" style="background: url('tshirt_design_2.png.JPG'), #555;">T-Shirt Mockup</div>
                     <div class="polaroid-caption">Instant Love</div>
                 </div>
