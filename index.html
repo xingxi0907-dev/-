@@ -194,12 +194,14 @@
     }
     .polaroid img, .img-placeholder {
         width: 100%;
-        height: auto;
+        /* CHANGE: 強制設定 3:5 比例 (Portrait) */
+        aspect-ratio: 3 / 5; 
         display: block;
         filter: sepia(0.2) contrast(1.1);
-        min-height: 300px;
         background: #eee;
-        object-fit: cover;
+        object-fit: cover; /* 確保圖片填滿且不變形 */
+        background-size: cover; /* 確保背景圖填滿 */
+        background-position: center;
     }
     /* 圖片佔位符 (若圖片連結失效時顯示) */
     .img-placeholder {
@@ -246,6 +248,7 @@
     }
     .hero-img {
         max-width: 450px;
+        width: 100%; /* 確保容器響應 */
         animation: float 4s ease-in-out infinite;
         filter: drop-shadow(0 0 20px rgba(5, 217, 232, 0.4));
     }
@@ -340,7 +343,7 @@
                 </div>
                 <div class="hero-img">
                     <div class="polaroid" style="transform: rotate(3deg); padding-bottom: 40px;">
-                        <div class="img-placeholder" style="background: url('character_color.png.JPG'), linear-gradient(135deg, #111, #333); height: 350px;">Mr. Chill Figure</div>
+                        <div class="img-placeholder" style="background: url('character_color.png.JPG'), linear-gradient(135deg, #111, #333);">Mr. Chill Figure</div>
                         <div class="polaroid-caption">Mr. Chill</div>
                     </div>
                 </div>
@@ -350,7 +353,7 @@
         <div id="about" class="section">
             <div class="grid-2">
                 <div class="polaroid" style="transform: rotate(-2deg);">
-                    <div class="img-placeholder" style="background: url('IMG_0668.JPG'), #222; height: 400px;">Concept Art</div>
+                     <div class="img-placeholder" style="background: url('IMG_0668.JPG'), #222;">Concept Art</div>
                     <div class="polaroid-caption">Concept Draft v0.1</div>
                 </div>
                 <div>
@@ -435,7 +438,7 @@
                 </div>
 
                 <div class="polaroid" style="transform: rotate(2deg);">
-                    <div class="img-placeholder" style="background: url('logo_sketch.png.PNG'), #333; height: 450px;">Logo Sketch</div>
+                     <div class="img-placeholder" style="background: url('logo_sketch.png.PNG'), #333;">Logo Sketch</div>
                     <div class="polaroid-caption">Hand-drawn Vibes</div>
                 </div>
             </div>
@@ -542,7 +545,7 @@
                     </div>
                 </div>
                 <div class="polaroid" style="transform: rotate(3deg);">
-                    <div class="img-placeholder" style="background: url('tshirt_design_2.png.JPG'), #555; height: 500px;">T-Shirt Mockup</div>
+                     <div class="img-placeholder" style="background: url('tshirt_design_2.png.JPG'), #555;">T-Shirt Mockup</div>
                     <div class="polaroid-caption">Instant Love</div>
                 </div>
             </div>
@@ -600,4 +603,3 @@
     </script>
 </body>
 </html>
-
